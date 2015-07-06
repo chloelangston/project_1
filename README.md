@@ -4,9 +4,9 @@ Alternate pressing your keys to blow up to balloon.  First to pop wins!
 
 
 
-![Alt text](balloons1.jpg)
-![Alt text](balloons2.jpg)
-![Alt text](balloons3.jpg)
+![Alt text](http://i.imgur.com/rs6ZrLl.jpg)
+![Alt text](http://i.imgur.com/HAzPCUn.jpg)
+![Alt text](http://i.imgur.com/Hjox1TD.jpg)
 ![Alt text](http://www.thisiswhyimbroke.com/images/giant-confetti-filled-balloon-explosion.jpg)
 
 
