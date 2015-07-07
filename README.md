@@ -1,6 +1,8 @@
 #Pop Balloons
 Alternate pressing your keys to blow up to balloon.  First to pop wins!
 
+-if theres a hole in the balloon, press the corresponding key to fix it
+
 
 
 
