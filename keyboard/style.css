@@ -1,4 +1,4 @@
-#Layer_2 {
+/*#Layer_2 {
   position: absolute;
   top: 50px;
   width: 100px;
@@ -8,9 +8,41 @@
 #Layer_1 {
   position: absolute;
   width: 100px;
-  top: 50px;
+  bottom: 50px;
+  left: 50%;
+  border: 1px solid black;
+}
+
+#balloon1 {
+  fill: hotpink;
 
 }
+
+#balloon2 {
+  fill: orange;
+  stroke: white;
+}*/
+
+
+.container {
+  width: auto;
+  margin-left: 200px;
+}
+
+.pink-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  display: inline;
+}
+
+.orange-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  display: inline;
+}
+
 
 .body {
   width: 100px;
@@ -36,7 +68,15 @@
   position: absolute;
 }
 
-
-body {
-  background-color: lightblue;
+/*.balloon1_container{
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  border: 1px solid black;
+}*/
+.background {
+  position: absolute;
 }
+/*body {
+  background-color: lightblue;
+}*/

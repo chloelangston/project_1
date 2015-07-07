@@ -8,34 +8,62 @@
   <body>
     <div class="score1">0</div>
     <div class="score2">0</div>
+    <svg class="background" width="100%" height="600">
+      <defs>
+        <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="lightblue"/>
+        <stop offset="100%" stop-color="lightblue" stop-opacity="0"/>
+      </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="100%" height="600" fill="url(#Gradient1)" />
+    </svg>
     <div class = "frog">
     <img class="body" src="frog.png" alt="" />
     <img class="armsdown" src="frog_arms_down.png" alt="" />
     <img class="armsup" src="frog_arms_up.png" alt="" />
     </div>
-    <canvas id="canvas1" width="300" height="300">
 
-    </canvas>
+
     <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     	 width="360px" height="360px" viewBox="0 0 360 360" enable-background="new 0 0 360 360" xml:space="preserve">
     <ellipse id="balloon1" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="154.458" cy="155.061" rx="5" ry="5"/>
     </svg> -->
+    <!-- <div class="balloons_container">
+    <div class="balloon1_container">
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-    	 width="360px" height="360px" viewBox="0 0 360 360" enable-background="new 0 0 360 360" xml:space="preserve">
-    <path id="balloon1" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M134.612,328.813
+    	 width="360px" height="360px" viewBox="0 0 360 360" align="xMidYMid" enable-background="new 0 0 360 360" xml:space="preserve">
+    <path id="balloon1" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M134.612,328.813
     	c0,0-238.818-155.866-41.673-284.316c197.146-128.451,290.106,92.362,205.159,174.627
     	C213.149,301.388,110.569,347.57,110.569,347.57s32.057,11.549,32.057,7.218S134.612,328.813,134.612,328.813z"/>
     </svg>
+  </div>
+  <div class="balloon2_container">
     <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     	 width="360px" height="360px" viewBox="0 0 360 360" enable-background="new 0 0 360 360" xml:space="preserve">
-    <path id="balloon2" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M209.947,328.813
+    <path id="balloon2" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M209.947,328.813
     	c0,0,238.818-155.866,41.673-284.316C54.475-83.954-38.486,136.859,46.461,219.124c84.948,82.264,187.528,128.446,187.528,128.446
     	s-32.057,11.549-32.057,7.218S209.947,328.813,209.947,328.813z"/>
     </svg>
+  </div>
+  </div> -->
     <!-- <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     	 width="360px" height="360px" viewBox="0 0 360 360" enable-background="new 0 0 360 360" xml:space="preserve">
        <ellipse id="balloon2" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="154.458" cy="155.061" rx="5" ry="5"/>
     </svg> -->
+    <div class="container">
+    <div class="pink-container">
+    <svg id="pink" width="400" height="400">
+      <circle id="sphere1" cx="150" cy="280" r="10" style="fill:hotpink;stroke:white;stroke-width:1" />
+      <polygon points="140,300 160,300 150,290" style="fill:hotpink;stroke:white;stroke-width:1" />
+    </svg>
+    </div>
+    <div class="orange-container">
+    <svg id="orange" width="400" height="400">
+      <circle id="sphere2" cx="150" cy="240" r="50" style="fill:orange;stroke:white;stroke-width:1" />
+      <polygon points="140,300 160,300 150,290" style="fill:orange;stroke:white;stroke-width:1" />
+    </svg>
+    </div>
+    </div>
 
     <script src="main.js" charset="utf-8"></script>
   </body>
