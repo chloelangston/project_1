@@ -34,6 +34,14 @@ sphere2.setAttribute("cy", summit-radius2);
 
 
 
+
+var monkeyHands = document.querySelector('.monkey-hands');
+var high = 129;
+var move = 10;
+monkeyHands.setAttribute("cy", high+move);
+
+
+
 body.addEventListener('keydown', function(evt) {
   if (rightCounter % 2 === 0){
     if (evt.keyCode === 222) {
@@ -43,6 +51,8 @@ body.addEventListener('keydown', function(evt) {
       // layer2.style.width = rightCounter*3 + 100 + "px";
       console.log(rightCounter);
       score2.innerText = rightCounter;
+
+      monkeyHands.setAttribute("cy", high+move);
 
       radius2+=1;
       sphere2.setAttribute("r", radius2);
@@ -59,6 +69,8 @@ body.addEventListener('keydown', function(evt) {
       // layer2.style.width = rightCounter*3 + 100 + "px";
       console.log(rightCounter);
       score2.innerText = rightCounter;
+
+      monkeyHands.setAttribute("cy", high);
 
       radius2+=1;
       sphere2.setAttribute("r", radius2);

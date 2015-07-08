@@ -44,6 +44,19 @@
 }
 
 
+.monkey {
+  width: 100px;
+  height: 100px;
+  top: 300px;
+  left: 900px;
+  position: absolute;
+}
+
+.monkey-svg {
+  width: 100px;
+  height: 100px;
+}
+
 .body {
   width: 100px;
   height: 100px;

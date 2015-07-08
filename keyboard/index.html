@@ -10,10 +10,24 @@
     <div class="score2">0</div>
     <svg class="background" width="100%" height="600">
       <defs>
-        <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
-        <stop offset="0%" stop-color="lightblue"/>
-        <stop offset="100%" stop-color="lightblue" stop-opacity="0"/>
-      </linearGradient>
+        <radialGradient id="Gradient1"
+            cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25">
+        <stop offset="0%" stop-color="lightblue" stop-opacity="0"/>
+        <stop offset="100%" stop-color="lightblue" stop-opacity="1"/>
+        </radialGradient>
+
+        <radialGradient id="Gradient2"
+            cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25">
+        <stop offset="0%" stop-color="lightpink" stop-opacity="1"/>
+        <stop offset="100%" stop-color="hotpink" stop-opacity="1"/>
+        </radialGradient>
+
+        <radialGradient id="Gradient3"
+            cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25">
+        <stop offset="0%" stop-color="white" stop-opacity="1"/>
+        <stop offset="100%" stop-color="orange" stop-opacity="1"/>
+        </radialGradient>
+
       </defs>
       <rect x="0" y="0" width="100%" height="600" fill="url(#Gradient1)" />
     </svg>
@@ -21,6 +35,33 @@
     <img class="body" src="frog.png" alt="" />
     <img class="armsdown" src="frog_arms_down.png" alt="" />
     <img class="armsup" src="frog_arms_up.png" alt="" />
+    </div>
+    <div class="monkey">
+      <svg class="monkey-svg" version="1.1"
+     baseProfile="full"
+     viewbox="0 0 200 200"
+     width="200" height="200"
+     xmlns="http://www.w3.org/2000/svg">
+
+     <circle cx="100" cy="150" r="60" fill="#654321"/>
+     <circle cx="58" cy="26" r="20" fill="#654321"/>
+     <circle cx="140" cy="26" r="20" fill="#654321"/>
+     <circle cx="58" cy="26" r="10" fill="#FFB775"/>
+     <circle cx="140" cy="26" r="10" fill="#FFB775"/>
+     <circle cx="100" cy="85" r="65" fill="#654321"/>
+     <ellipse cx="100" cy="100" rx="60" ry="30" fill="#FFB775"/>
+     <ellipse cx="75" cy="70" rx="25" ry="35" fill="#FFB775"/>
+     <ellipse cx="124" cy="70" rx="25" ry="35" fill="#FFB775"/>
+     <ellipse cx="75" cy="70" rx="20" ry="10" fill="white"/>
+     <ellipse cx="124" cy="70" rx="20" ry="10" fill="white"/>
+     <ellipse cx="75" cy="70" rx="8" ry="8" fill="black"/>
+     <ellipse cx="124" cy="70" rx="8" ry="8" fill="black"/>
+     <path d="M80 100 C 70 120, 140 120, 120 90" stroke="black"/>
+     <circle cx="70" cy="189" r="12" fill="#FFB775"/>
+     <circle cx="130" cy="189" r="12" fill="#FFB775"/>
+     <circle class="monkey-hands" cx="70" cy="129" r="15" fill="#FFB775"/>
+     <circle class="monkey-hands" cx="130" cy="129" r="15" fill="#FFB775"/>
+   </svg>
     </div>
 
 
@@ -53,13 +94,13 @@
     <div class="container">
     <div class="pink-container">
     <svg id="pink" width="400" height="400">
-      <circle id="sphere1" cx="150" cy="280" r="10" style="fill:hotpink;stroke:white;stroke-width:1" />
+      <circle id="sphere1" cx="150" cy="280" r="10" style="fill:url(#Gradient2)";stroke:white;stroke-width:1" />
       <polygon points="140,300 160,300 150,290" style="fill:hotpink;stroke:white;stroke-width:1" />
     </svg>
     </div>
     <div class="orange-container">
     <svg id="orange" width="400" height="400">
-      <circle id="sphere2" cx="150" cy="240" r="50" style="fill:orange;stroke:white;stroke-width:1" />
+      <circle id="sphere2" cx="150" cy="240" r="50" style="fill:url(#Gradient3)":orange;stroke:white;stroke-width:1" />
       <polygon points="140,300 160,300 150,290" style="fill:orange;stroke:white;stroke-width:1" />
     </svg>
     </div>
