@@ -1,5 +1,19 @@
 $(function() {
-  $('h1').removeClass('invisible');
+
+
+  setTimeout(function(){
+    $('.leftPlayer').removeClass('invisible');
+    $(".leftPlayer").css("position", "absolute").animate({
+      left: 80,
+      top:  460 }, 'slow');
+  },1000);
+
+  setTimeout(function(){
+    $('.rightPlayer').removeClass('invisible');
+    $(".rightPlayer").css("position", "absolute").animate({
+      left: 680,
+      top:  460 }, 'slow');
+  },2000);
 
 
 var body = document.querySelector('body');
@@ -14,7 +28,6 @@ var frog_down = document.querySelector('.armsdown');
 var frog_up = document.querySelector('.armsup');
 
 frog_up.style.opacity = 0;
-
 
 
 var sphere1 = document.querySelector('#sphere1');
@@ -34,6 +47,7 @@ sphere2.setAttribute("cy", summit-radius2);
 
 var mk1 = document.querySelector('#mk1');
 var mk2 = document.querySelector('#mk2');
+var inflatorBar = document.querySelector('#inflator-bar');
 var high = 129;
 var move = 20;
 mk1.setAttribute("cy", high+move);
@@ -68,6 +82,7 @@ body.addEventListener('keydown', function(evt) {
       if (evt.keyCode === 222) {
         mk1.setAttribute("cy", high);
         mk2.setAttribute("cy", high);
+        inflatorBar.setAttribute('points', "70," + high + " 130," + high + " 130,140 70,140");
         rightPlayer();
       }
     }
@@ -75,6 +90,7 @@ body.addEventListener('keydown', function(evt) {
       if (evt.keyCode === 191) {
         mk1.setAttribute("cy", high+move);
         mk2.setAttribute("cy", high+move);
+        inflatorBar.setAttribute('points', "70," + (high+move) + " 130," + (high+move) + " 130,160 70,160");
         rightPlayer();
       }
 
@@ -159,9 +175,3 @@ function balloonHole2() {
 }
 
 });
-
-
-
-
-
-// setTimeout(function(){ leftPlayerText.show(); }, 3000);
