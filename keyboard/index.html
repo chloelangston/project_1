@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>keyboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   </head>
   <body>
     <div class="score1">0</div>
@@ -60,7 +61,7 @@
      <circle cx="70" cy="189" r="12" fill="#FFB775"/>
      <circle cx="130" cy="189" r="12" fill="#FFB775"/>
      <circle class="monkey-hands" cx="70" cy="129" r="15" fill="#FFB775"/>
-     <circle class="monkey-hands" cx="130" cy="129" r="15" fill="#FFB775"/>
+     <circle class="monkey-hands" id="mk2" cx="130" cy="129" r="15" fill="#FFB775"/>
    </svg>
     </div>
 
@@ -91,21 +92,47 @@
     	 width="360px" height="360px" viewBox="0 0 360 360" enable-background="new 0 0 360 360" xml:space="preserve">
        <ellipse id="balloon2" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="154.458" cy="155.061" rx="5" ry="5"/>
     </svg> -->
+
     <div class="container">
     <div class="pink-container">
     <svg id="pink" width="400" height="400">
-      <circle id="sphere1" cx="150" cy="280" r="10" style="fill:url(#Gradient2)";stroke:white;stroke-width:1" />
+      <circle id="sphere1" cx="150" cy="280" r="10" fill ="url(#Gradient2)"/>
       <polygon points="140,300 160,300 150,290" style="fill:hotpink;stroke:white;stroke-width:1" />
+
     </svg>
     </div>
     <div class="orange-container">
     <svg id="orange" width="400" height="400">
-      <circle id="sphere2" cx="150" cy="240" r="50" style="fill:url(#Gradient3)":orange;stroke:white;stroke-width:1" />
+      <circle id="sphere2" cx="150" cy="240" r="50" fill = "url(#Gradient3)" >
+      <!-- <text x="0" y="0" font-size="3px" fill="red">I</text> -->
+      </circle>
       <polygon points="140,300 160,300 150,290" style="fill:orange;stroke:white;stroke-width:1" />
+
+
     </svg>
+
     </div>
+    </div>
+    <svg class="string1" width="250px" height="160px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M00 80 Q 52.5 30, 95 80 T 208 35" stroke="black" fill="transparent"/>
+    </svg>
+    <svg class="string2" width="250px" height="160px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 36 Q 40 80, 125 70 T 220 100" stroke="black" fill="transparent"/>
+    </svg>
+    <div class="key1">""</div>
+    <div class="key2">""</div>
+
+    <div class="directions">
+      <h1 class="leftPlayer invisible fade-in">Player on left </br>
+      alternate pressing A and Z
+      </h1>
+      <h1 class="rightPlayer invisible fade-in">Player on right </br>
+      alternate pressing " and ?
+      </h1>
+
     </div>
 
     <script src="main.js" charset="utf-8"></script>
+
   </body>
 </html>
