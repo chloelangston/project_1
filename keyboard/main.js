@@ -1,6 +1,6 @@
 $(function() {
   $('h1').removeClass('invisible');
-});
+
 
 var body = document.querySelector('body');
 var rightCounter = 0;
@@ -18,25 +18,25 @@ frog_up.style.opacity = 0;
 
 
 var sphere1 = document.querySelector('#sphere1');
-var summit=290;
+var summit=330;
 var radius1 = 10;
 sphere1.setAttribute("r", radius1);
 sphere1.setAttribute("cy", summit-radius1);
 
 
 var sphere2 = document.querySelector('#sphere2');
-var summit=290;
+var summit=330;
 var radius2 = 10;
 sphere2.setAttribute("r", radius2);
 sphere2.setAttribute("cy", summit-radius2);
 
 
 
-var monkeyHands = document.querySelector('.monkey-hands');
+var mk1 = document.querySelector('#mk1');
 var mk2 = document.querySelector('#mk2');
 var high = 129;
 var move = 20;
-monkeyHands.setAttribute("cy", high+move);
+mk1.setAttribute("cy", high+move);
 mk2.setAttribute("cy", high+move);
 
 
@@ -60,115 +60,105 @@ var randKeyCode2 = Math.floor( Math.random() * (ymax + 1 - ymin) + ymin );
 var hole1 = true;
 var hole2 = true;
 
+
+
 body.addEventListener('keydown', function(evt) {
-  if (hole1){
-
-  if (rightCounter % 2 === 0){
-    if (evt.keyCode === 222) {
-      rightCounter += 1;
-      score2.innerText = rightCounter;
-
-      monkeyHands.setAttribute("cy", high+move);
-      mk2.setAttribute("cy", high+move);
-
-      radius2+=1;
-      sphere2.setAttribute("r", radius2);
-      sphere2.setAttribute("cy", summit-radius2);
-
+  if (hole1) {
+    if (rightCounter%2 === 0) {
+      if (evt.keyCode === 222) {
+        mk1.setAttribute("cy", high);
+        mk2.setAttribute("cy", high);
+        rightPlayer();
+      }
+    }
+    else if (rightCounter % 2 === 1){
+      if (evt.keyCode === 191) {
+        mk1.setAttribute("cy", high+move);
+        mk2.setAttribute("cy", high+move);
+        rightPlayer();
+      }
 
     }
-    if (rightCounter === (randKey1)) {
-      return balloonHole1();
-    }
-   }
-  else if (rightCounter % 2 === 1){
-    if (evt.keyCode === 191) {
-      rightCounter += 1;
-      score2.innerText = rightCounter;
-
-      monkeyHands.setAttribute("cy", high);
-      mk2.setAttribute("cy", high);
-
-      radius2+=1;
-      sphere2.setAttribute("r", radius2);
-      sphere2.setAttribute("cy", summit-radius2);
   }
+});
+
+
+function rightPlayer() {
+  rightCounter += 1;
+  score2.innerText = rightCounter;
+  radius2+=1;
+  sphere2.setAttribute("r", radius2);
+  sphere2.setAttribute("cy", summit-radius2);
+
   if (rightCounter === (randKey1)) {
     return balloonHole1();
+    }
+}
+
+
+body.addEventListener('keydown', function(evt) {
+  if (hole2) {
+    if (leftCounter%2 === 0) {
+      if (evt.keyCode === 65) {
+        frog_up.style.opacity = 0;
+        frog_down.style.opacity = 1;
+        leftPlayer();
+
+      }
+    }
+    else if (leftCounter % 2 === 1){
+      if (evt.keyCode === 90) {
+        frog_up.style.opacity = 1;
+        frog_down.style.opacity = 0;
+        leftPlayer();
+
+      }
+    }
+  }
+});
+
+
+function leftPlayer() {
+  leftCounter += 1;
+  score1.innerText = leftCounter;
+  radius1+=1;
+  sphere1.setAttribute("r", radius1);
+  sphere1.setAttribute("cy", summit-radius1);
+
+  if (leftCounter === (randKey2)) {
+    return balloonHole2();
   }
 }
 
-}
 
-
-if (hole2) {
-
-  if (leftCounter % 2 === 0) {
-    if (evt.keyCode === 65) {
-      leftCounter += 1;
-
-      score1.innerText = leftCounter;
-      frog_up.style.opacity = 0;
-      frog_down.style.opacity = 1;
-
-      radius1+=1;
-      sphere1.setAttribute("r", radius1);
-      sphere1.setAttribute("cy", summit-radius1);
-
+function balloonHole1() {
+  var randCharCode = String.fromCharCode(randKeyCode1);
+  key1.innerText = randCharCode;
+  hole1 = false;
+  console.log('enter key');
+  body.addEventListener('keydown', function(evt) {
+    if (evt.keyCode === randKeyCode1) {
+      $('.key1').addClass('invisible');
+      hole1 = true;
     }
-    if (leftCounter === (randKey2)) {
-      return balloonHole2();
-    }
-  }
-  else if (leftCounter % 2 === 1) {
-    if (evt.keyCode === 90) {
-      leftCounter += 1;
-
-      score1.innerText = leftCounter;
-      frog_up.style.opacity = 1;
-      frog_down.style.opacity = 0;
-
-      radius1+=1;
-      sphere1.setAttribute("r", radius1);
-      sphere1.setAttribute("cy", summit-radius1);
-
-    }
-    if (leftCounter === (randKey2)) {
-      return balloonHole2();
-    }
-  }
-}
-
   });
+}
 
+function balloonHole2() {
+  var randCharCode2 = String.fromCharCode(randKeyCode2);
+  key2.innerText = randCharCode2;
+  hole2 = false;
+  console.log('enter key');
 
-  function balloonHole1() {
-    var randCharCode = String.fromCharCode(randKeyCode1);
-    key1.innerText = randCharCode;
-    hole1 = false;
-    console.log('enter key');
+  body.addEventListener('keydown', function(evt) {
+    if (evt.keyCode === randKeyCode2) {
+      $('.key2').addClass('invisible');
+      hole2 = true;
+    }
+  });
+}
 
-    body.addEventListener('keydown', function(evt) {
-      if (evt.keyCode === randKeyCode1) {
-        hole1 = true;
-      }
-    });
-  }
-
-  function balloonHole2() {
-    var randCharCode2 = String.fromCharCode(randKeyCode2);
-    key2.innerText = randCharCode2;
-    hole2 = false;
-    console.log('enter key');
-
-    body.addEventListener('keydown', function(evt) {
-      if (evt.keyCode === randKeyCode2) {
-        hole2 = true;
-      }
-    });
-  }
-
-
+});
 
 
 

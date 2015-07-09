@@ -23,6 +23,21 @@
   stroke: white;
 }*/
 
+.keys {
+  color: white;
+  font-family: sans-serif;
+  font-size: 30px;
+}
+
+
+
+.scores {
+  position: absolute;
+}
+.score2 {
+  left: 50px;
+}
+
 h1 {
   top: 20%;
   text-align: center;
