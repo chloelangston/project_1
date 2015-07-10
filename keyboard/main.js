@@ -1,19 +1,19 @@
 $(function() {
 
-
-  setTimeout(function(){
-    $('.leftPlayer').removeClass('invisible');
-    $(".leftPlayer").css("position", "absolute").animate({
-      left: 80,
-      top:  460 }, 'slow');
-  },1000);
-
-  setTimeout(function(){
-    $('.rightPlayer').removeClass('invisible');
-    $(".rightPlayer").css("position", "absolute").animate({
-      left: 680,
-      top:  460 }, 'slow');
-  },2000);
+  //
+  // setTimeout(function(){
+  //   $('.leftPlayer').removeClass('invisible');
+  //   $(".leftPlayer").css("position", "absolute").animate({
+  //     left: 80,
+  //     top:  460 }, 'slow');
+  // },1000);
+  //
+  // setTimeout(function(){
+  //   $('.rightPlayer').removeClass('invisible');
+  //   $(".rightPlayer").css("position", "absolute").animate({
+  //     left: 680,
+  //     top:  460 }, 'slow');
+  // },2000);
 
 
 var body = document.querySelector('body');
@@ -48,6 +48,7 @@ sphere2.setAttribute("cy", summit-radius2);
 var mk1 = document.querySelector('#mk1');
 var mk2 = document.querySelector('#mk2');
 var inflatorBar = document.querySelector('#inflator-bar');
+var inflatorBarMiddle = document.querySelector('#inflator-bar-middle');
 var high = 129;
 var move = 20;
 mk1.setAttribute("cy", high+move);
@@ -73,16 +74,22 @@ var randKeyCode2 = Math.floor( Math.random() * (ymax + 1 - ymin) + ymin );
 
 var hole1 = true;
 var hole2 = true;
+var winner = true;
 
 
 
 body.addEventListener('keydown', function(evt) {
+  if (winner){
+  if(rightCounter !== 0 || leftCounter !== 0) {
+    $('.hole-text-container').addClass('invisible');
+  }
   if (hole1) {
     if (rightCounter%2 === 0) {
       if (evt.keyCode === 222) {
         mk1.setAttribute("cy", high);
         mk2.setAttribute("cy", high);
         inflatorBar.setAttribute('points', "70," + high + " 130," + high + " 130,140 70,140");
+        inflatorBarMiddle.setAttribute('points', "95,139 105,139 105,200 95,200");
         rightPlayer();
       }
     }
@@ -91,17 +98,19 @@ body.addEventListener('keydown', function(evt) {
         mk1.setAttribute("cy", high+move);
         mk2.setAttribute("cy", high+move);
         inflatorBar.setAttribute('points', "70," + (high+move) + " 130," + (high+move) + " 130,160 70,160");
+        inflatorBarMiddle.setAttribute('points', "95,149 105,149 105,200 95,200");
         rightPlayer();
       }
 
     }
   }
+}
 });
 
 
 function rightPlayer() {
   rightCounter += 1;
-  score2.innerText = rightCounter;
+  // score2.innerText = rightCounter;
   radius2+=1;
   sphere2.setAttribute("r", radius2);
   sphere2.setAttribute("cy", summit-radius2);
@@ -109,10 +118,17 @@ function rightPlayer() {
   if (rightCounter === (randKey1)) {
     return balloonHole1();
     }
+
+  if (rightCounter === 135) {
+    $('.orange-container').addClass('invisible');
+    $('.box2').removeClass('invisible');
+    winner = false;
+  }
 }
 
 
 body.addEventListener('keydown', function(evt) {
+  if (winner){
   if (hole2) {
     if (leftCounter%2 === 0) {
       if (evt.keyCode === 65) {
@@ -131,12 +147,13 @@ body.addEventListener('keydown', function(evt) {
       }
     }
   }
+}
 });
 
 
 function leftPlayer() {
   leftCounter += 1;
-  score1.innerText = leftCounter;
+  // score1.innerText = leftCounter;
   radius1+=1;
   sphere1.setAttribute("r", radius1);
   sphere1.setAttribute("cy", summit-radius1);
@@ -144,17 +161,26 @@ function leftPlayer() {
   if (leftCounter === (randKey2)) {
     return balloonHole2();
   }
+  if (leftCounter === 135) {
+    $('.pink-container').addClass('invisible');
+    $('.box1').removeClass('invisible');
+    winner = false;
+    explode();
+  }
 }
 
 
 function balloonHole1() {
   var randCharCode = String.fromCharCode(randKeyCode1);
+  $('.key1').removeClass('invisible');
+  $('.bandaid1').removeClass('invisible');
   key1.innerText = randCharCode;
   hole1 = false;
   console.log('enter key');
   body.addEventListener('keydown', function(evt) {
     if (evt.keyCode === randKeyCode1) {
       $('.key1').addClass('invisible');
+      $('.bandaid1').addClass('invisible');
       hole1 = true;
     }
   });
@@ -162,6 +188,9 @@ function balloonHole1() {
 
 function balloonHole2() {
   var randCharCode2 = String.fromCharCode(randKeyCode2);
+  $('.key2').removeClass('invisible');
+  $('.bandaid2').removeClass('invisible');
+
   key2.innerText = randCharCode2;
   hole2 = false;
   console.log('enter key');
@@ -169,6 +198,7 @@ function balloonHole2() {
   body.addEventListener('keydown', function(evt) {
     if (evt.keyCode === randKeyCode2) {
       $('.key2').addClass('invisible');
+      $('.bandaid2').addClass('invisible');
       hole2 = true;
     }
   });
